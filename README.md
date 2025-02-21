@@ -16,20 +16,32 @@ This project demonstrates a real-time stream data processing pipeline for an onl
 1. **Event Hub Setup:**
     * Created two Event Hubs: `bookingsstopic` and `paymentstopic` to ingest booking and payment events, respectively.
     * Configured SAS policies for secure access.
+![Alt text](snaps/create-events.PNG)
 
 2. **Data Generation:**
     * Developed Python scripts (`mock_bookings.py` and `mock_payments.py`) to generate mock booking and payment events and publish them to the respective Event Hubs.
+![Alt text](snaps/generate-booking-data.PNG)
+![Alt text](snaps/generate-customer-data.PNG)
 
 3. **Stream Analytics Job:**
     * Created a Stream Analytics job (`devansh_gds_stream_analysis`) to process the incoming event streams.
+![Alt text](snaps/create-stream-analytics-job.PNG)
     * Configured inputs to read from the `bookingsstopic` and `paymentstopic` Event Hubs.
     * Configured output to write the processed data to the Synapse Data Warehouse.
+![Alt text](snaps/stream-analytics-inputs.PNG)
+![Alt text](snaps/stream-analytics-outputs.PNG)
+
     * Defined SQL-like queries to perform real-time processing, transformations, and aggregations.
+![Alt text](snaps/transform-booking-stream-data.PNG)
+![Alt text](snaps/transform-customer-stream-data.PNG)
+![Alt text](snaps/join-streamin-booking-and-customer-data.PNG)
     
 
 4. **Synapse Data Warehouse:**
     * Created a Synapse workspace (`bookmyshowsynapse`) with a dedicated SQL pool (`bookmyshow-dwh`)
     * Defined a schema (`bookymyshow`) and table (`bookings_fact`) to store the processed data.
+![Alt text](snaps/check-synapse-tabl.PNG)
+![Alt text](snaps/schema-table-in-dedicated-pool.PNG)
 
 ## Data Flow
 
